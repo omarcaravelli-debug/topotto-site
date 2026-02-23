@@ -1,14 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TOP 8</title>
-    <script type="module" crossorigin src="/assets/index-Du9hCKhV.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-9XOGHMZK.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOP OTTO</title>
+  <script type="module" crossorigin src="/assets/index-Du9hCKhV.js?v=17"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-9XOGHMZK.css">
+  <link rel="stylesheet" href="/assets/constellation.css?v=32">
+</head>
+
+<body>
+  <div id="particles-container" style="position: fixed; inset: 0; pointer-events: none; z-index: 100;"></div>
+  <div class="custom-bg" style="display: none;"></div>
+  <div id="root"></div>
+  <script type="module">
+    import { initParticles } from './assets/particles-init.js';
+    initParticles(document.getElementById('particles-container'), {
+      particleCount: 890,
+      particleSpread: 12,
+      speed: 0.15,
+      particleColors: ["#e67205"],
+      moveParticlesOnHover: true,
+      particleHoverFactor: 0.8,
+      alphaParticles: true,
+      particleBaseSize: 150,
+      sizeRandomness: 1,
+      cameraDistance: 73,
+      disableRotation: false
+    });
+  </script>
+</body>
+
 </html>

@@ -1,0 +1,80 @@
+/* 
+   SFONDO COSTELLAZIONI (BIANCO SU NERO)
+*/
+.custom-bg {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-image: url('/assets/background.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    z-index: -10 !important;
+    background-color: #000000 !important;
+}
+
+/* RIMOZIONE TOTALE DI OGNI COLORE E SFUMATURA */
+*,
+*::before,
+*::after {
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    /* Bordi bianchi sottili */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Forza lo sfondo nero di base */
+html,
+body {
+    background-color: #000000 !important;
+}
+
+/* Eccezione per lo sfondo personalizzato */
+.custom-bg,
+.custom-bg::after {
+    background-image: url('/assets/background.png') !important;
+    background-color: transparent !important;
+}
+
+/* Rendi tutto il testo BIANCO puro */
+* {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Caselle: trasparenti con bordo bianco per vedere il gioco sotto */
+[class*="bg-"] {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Rimuovi ogni residuo di blu/cyan/altri colori */
+[class*="text-cyan"],
+[class*="text-blue"],
+[class*="text-purple"] {
+    color: #ffffff !important;
+}
+
+[class*="from-"],
+[class*="to-"],
+[class*="via-"] {
+    --tw-gradient-from: transparent !important;
+    --tw-gradient-to: transparent !important;
+    --tw-gradient-stops: transparent !important;
+}
+
+/* Bottoni e elementi interattivi */
+button,
+a {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+button:hover,
+a:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
