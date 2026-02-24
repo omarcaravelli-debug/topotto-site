@@ -1,17 +1,87 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TOP OTTO</title>
+  <meta name="description"
+    content="TOP OTTO: l'esperienza di gioco definitiva guidata dall'intelligenza artificiale. Non il solito quiz.">
+  <meta property="og:title" content="TOP OTTO">
+  <meta property="og:description"
+    content="L'esperienza di gioco definitiva guidata dall'intelligenza artificiale. Non il solito quiz.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TOP OTTO">
+  <meta name="twitter:description"
+    content="L'esperienza di gioco definitiva guidata dall'intelligenza artificiale. Non il solito quiz.">
   <script type="module" crossorigin src="/assets/index-Du9hCKhV.js?v=17"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-9XOGHMZK.css">
   <link rel="stylesheet" href="/assets/constellation.css?v=32">
+  <style>
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+    }
+
+    #loader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-content {
+      text-align: center;
+    }
+
+    .loader-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #fff, #e67205);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: pulse-glow 2s infinite alternate;
+    }
+
+    .loader-subtitle {
+      color: #666;
+      font-size: 0.9rem;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+    }
+
+    @keyframes pulse-glow {
+      from {
+        filter: drop-shadow(0 0 5px rgba(230, 114, 5, 0.2));
+      }
+
+      to {
+        filter: drop-shadow(0 0 20px rgba(230, 114, 5, 0.6));
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-title">TOP OTTO</div>
+      <div class="loader-subtitle">Inizializzazione AI...</div>
+    </div>
+  </div>
   <div id="particles-container" style="position: fixed; inset: 0; pointer-events: none; z-index: 100;"></div>
   <div class="custom-bg" style="display: none;"></div>
   <div id="root"></div>
@@ -29,6 +99,14 @@
       sizeRandomness: 1,
       cameraDistance: 73,
       disableRotation: false
+    });
+
+    // Premium Fade-out for the loader
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      setTimeout(() => {
+        loader.classList.add('fade-out');
+      }, 500); // Small delay for visual impact
     });
   </script>
 </body>
